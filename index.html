@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AromaCanela</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-16 bg-gray-300 text-black transition-all duration-300 flex flex-col items-center">
+        
+        <!-- Botón para expandir/contraer -->
+        <button id="menu-btn" class="absolute left-full top-1/2 -translate-y-1/2 bg-gray-700 p-2 rounded-r-lg hover:bg-gray-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+              </svg>
+        </button>
+
+        <!-- Categorías -->
+        <nav class="mt-10 flex flex-col gap-4 w-full">
+            <ul class="w-full">
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <img width="50" height="50" src="https://img.icons8.com/ios/50/cafe.png" alt="cafe"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Cafetería </span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <img width="50" height="50" src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/external-juice-party-icongeek26-outline-icongeek26.png" alt="external-juice-party-icongeek26-outline-icongeek26"/>
+                    <span class="ml-3 opacity-0 transition-opacity duration-300 hidden">Jugos / Bebidas</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <img width="50" height="50" src="https://img.icons8.com/dotty/50/cherry-cheesecake.png" alt="cherry-cheesecake"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Postres / Wafles</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <img width="50" height="50" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/50/external-sandwich-restaurant-dreamstale-lineal-dreamstale-2.png" alt="external-sandwich-restaurant-dreamstale-lineal-dreamstale-2"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Sandwich</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <img width="50" height="50" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/50/external-empanada-world-cuisine-flaticons-lineal-color-flat-icons.png" alt="external-empanada-world-cuisine-flaticons-lineal-color-flat-icons"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Empanadas</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 12h6"></path>
+                    </svg>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Categoría 6</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 9v6"></path>
+                    </svg>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Categoría 7</span>
+                </li>
+                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
+                    <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 10h18M3 14h18"></path>
+                    </svg>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Categoría 8</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const sidebar = document.getElementById("sidebar");
+
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("w-16");
+            sidebar.classList.toggle("w-35");
+
+            // Alterna la visibilidad del texto
+            const spans = sidebar.querySelectorAll("span");
+            spans.forEach(span => {
+                span.classList.toggle("hidden");
+                span.classList.toggle("opacity-0");
+            });
+        });
+    </script>
+
+</body>
+</html>
