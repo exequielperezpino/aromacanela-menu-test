@@ -3,73 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    
+   
     <title>AromaCanela</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex">
+<body class="bg-fuchsia-100 flex p-2">
 
     <!-- Sidebar -->
-    <aside id="sidebar" class="fixed top-0 left-0 h-full w-16 bg-gray-300 text-black transition-all duration-300 flex flex-col items-center">
+    <aside id="sidebar" class="fixed top-0 left-0 h-full w-15 pl-2 transition-all duration-300 flex flex-col items-center opacity-95">
         
         <!-- Botón para expandir/contraer -->
-        <button id="menu-btn" class="absolute left-full top-1/2 -translate-y-1/2 bg-gray-700 p-2 rounded-r-lg hover:bg-gray-600 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+        <button id="menu-btn" class="absolute left-full top-1/2 -translate-y-1/2 w-8 h-10 bg-green-500 transition animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
               </svg>
+              
         </button>
 
         <!-- Categorías -->
-        <nav class="mt-10 flex flex-col gap-4 w-full">
+        <nav class="mt-25 flex flex-col gap-10 w-full bg-gray-300 text-black rounded-2xl">
             <ul class="w-full">
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/ios/50/cafe.png" alt="cafe"/>
-                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Cafetería </span>
+                <li id="btnCafe" class="flex items-center py-4 hover:bg-white rounded-2xl cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/coffe.png"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden items-center">Cafetería </span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/external-icongeek26-outline-icongeek26/50/external-juice-party-icongeek26-outline-icongeek26.png" alt="external-juice-party-icongeek26-outline-icongeek26"/>
-                    <span class="ml-3 opacity-0 transition-opacity duration-300 hidden">Jugos,Bebidas</span>
+                <li id="btnbeb" class="flex items-center py-4 hover:bg-white cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/coke.png"/>
+                    <span class="ml-3 opacity-0 transition-opacity duration-300 hidden">Jugos<br>Bebidas</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/dotty/50/cherry-cheesecake.png" alt="cherry-cheesecake"/>
-                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Postres, Wafles</span>
+                <li class="flex items-center py-4 hover:bg-white cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/piece-of-cake.png"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Postres<br>Wafles</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/dotty/50/hamburger.png" alt="hamburger"/>
-                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Sandwich, Churrascos</span>
+                <li class="flex items-center py-4 hover:bg-white cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/burger.png"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Sandwich<br>Churrascos</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/dotty/50/pizza.png" alt="pizza"/>
-                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Pizza, Empanadas</span>
+                <li class="flex items-center py-4 hover:bg-white cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/pizza.png" alt="pizza"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Pizza<br>Empanadas</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/carbon-copy/50/french-fries.png" alt="french-fries"/>
-                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Papas, Chorrillana</span>
+                <li class="flex items-center py-4 hover:bg-white cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/papasfritas.png" alt="french-fries"/>
+                    <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Papas<br>Chorrillana</span>
                 </li>
-                <li class="flex items-center p-4 hover:bg-gray-700 cursor-pointer">
-                    <img width="50" height="50" src="https://img.icons8.com/wired/50/confetti.png" alt="confetti"/>
+                <li class="flex items-center py-4 hover:bg-white cursor-pointer">
+                    <img width="50" height="50" src="./src/iconos/celebration.png" alt="confetti"/>
                     <span class="ml-4 opacity-0 transition-opacity duration-300 hidden">Celebraciones</span>
                 </li>
             </ul>
         </nav>
     </aside>
-    <div class="fixed top-4 left-80 font-bold">
-        <span class="text-amber-700 text-2xl">AROMA</span> <span class="text-amber-800 text-2xl">CANELA</span>    </div>
-    <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const sidebar = document.getElementById("sidebar");
 
-        menuBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("w-16");
-            sidebar.classList.toggle("w-35");
+    <div class="fixed top-4 right-2 text-white text-6xl bg-red-300 px-4 py-0 rounded-lg shadow-lg 
+    animate-pulse translate-y-[-10px] font-fuenteMia">Aroma Canela</div>
 
-            // Alterna la visibilidad del texto
-            const spans = sidebar.querySelectorAll("span");
-            spans.forEach(span => {
-                span.classList.toggle("hidden");
-                span.classList.toggle("opacity-0");
-            });
-        });
-    </script>
+
+    
+    <div id="contenedorMain" class="flex flex-wrap ml-25 mt-22 mr-10 gap-2">
+        <div class="p-2 w-90 h-110 bg-amber-100 border-4 border-purple-500">
+            <h1 class="text-center">CATEGORIA</h1>
+            <div class="menu p-4 bg-gray-100 rounded-lg shadow-lg max-w-md mx-auto">
+                <h2 class="text-l font-bold text-gray-800">AMERICANO</h2>
+                <p>Simple <span class="price font-semibold text-gray-700 float-right">$3.000</span></p>
+                <p>Doble <span class="price font-semibold text-gray-700 float-right">$3.400</span></p>
+            
+                <h2 class="text-l font-bold text-gray-800">CAPUCHINO</h2>
+                <p>Simple <span class="price font-semibold text-gray-700 float-right">$3.100</span></p>
+                <p>Doble <span class="price font-semibold text-gray-700 float-right">$3.500</span></p>
+            
+                <h2 class="text-l font-bold text-gray-800">LATTE</h2>
+                <p>Simple <span class="price font-semibold text-gray-700 float-right">$3.100</span></p>
+                <p>Doble <span class="price font-semibold text-gray-700 float-right">$3.500</span></p>
+            
+                <h2 class="text-l font-bold text-gray-800">CORTADO</h2>
+                <p><span class="price font-semibold text-gray-700 float-right">$3.100</span></p>
+                <p class="text-gray-600">Café más shot de leche</p>
+            
+                <h2 class="text-l font-bold text-gray-800">IRLANDÉS</h2>
+                <p><span class="price font-semibold text-gray-700 float-right">$4.500</span></p>
+                <p class="text-gray-600">Café con whisky y crema batida</p>
+            
+                <h2 class="text-l font-bold text-gray-800">MOCACCINO</h2>
+                <p><span class="price font-semibold text-gray-700 float-right">$4.500</span></p>
+                <p class="text-gray-600">Café con chocolate, leche y crema</p>
+            </div>
+            
+            
+        </div>
+    </div>
 
 </body>
+<script src="./src/index.js" defer></script>
 </html>
